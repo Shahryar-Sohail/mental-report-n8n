@@ -2,10 +2,6 @@
 
 An automated end-to-end pipeline that captures mental health survey data, processes it using **Groq AI**, and delivers a professionally formatted, colorful HTML wellness report directly to the user's inbox.
 
-## 🚀 Live Demo
-* **Frontend:** Vercel 
-* **Automation Backend:** Used n8n Hosted on n8n Cloud
-
 ## 🛠️ The Tech Stack
 * **Frontend:** React / Vite (Deployed on **Vercel**)
 * **Workflow Engine:** **n8n**
