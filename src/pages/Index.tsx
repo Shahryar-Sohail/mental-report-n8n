@@ -28,7 +28,7 @@ const questions = [
   },
 ];
 
-const VITE_WEBHOOK_URL = import.meta.env.VITE_WEBHOOK_URL;
+const VITE_N8N_WEBHOOK_URL = import.meta.env.VITE_N8N_WEBHOOK_URL;
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -85,7 +85,7 @@ const Index = () => {
     } else {
       setLoading(true);
       try {
-        await fetch(VITE_WEBHOOK_URL, {
+        await fetch(VITE_N8N_WEBHOOK_URL, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ name: name.trim(), email: email.trim(), responses: newAnswers }),

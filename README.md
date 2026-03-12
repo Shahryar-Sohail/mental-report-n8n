@@ -1,73 +1,37 @@
-# Welcome to your Lovable project
+# 🧠 Mental Wellness AI Reporter
 
-## Project info
+An automated end-to-end pipeline that captures mental health survey data, processes it using **Groq AI**, and delivers a professionally formatted, colorful HTML wellness report directly to the user's inbox.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## 🚀 Live Demo
+* **Frontend:** Vercel 
+* **Automation Backend:** Used n8n Hosted on n8n Cloud
 
-## How can I edit this code?
+## 🛠️ The Tech Stack
+* **Frontend:** React / Vite (Deployed on **Vercel**)
+* **Workflow Engine:** **n8n**
+* **AI Logic:** **Groq Cloud API** (llama-3.1-8b-instant)
+* **Communication:** Gmail API via n8n
+* **Data Handling:** Secure Webhooks & Regex-based HTML Parsing
 
-There are several ways of editing your application.
+## ⚙️ How it Works
+1. **Data Capture:** A custom-built form on the Vercel-deployed website collects user sentiment data (Sleep, Anxiety, Connection, etc.).
+2. **Secure Trigger:** Data is sent via a `POST` request to an **n8n Webhook**. 
+3. **AI Analysis:** The **Groq AI Agent** processes the raw JSON. It calculates a "Wellness Score" and generates an empathetic analysis based on specific mental health factors.
+4. **Parsing & Formatting:** The workflow uses **JavaScript Regex** to extract scores and categories from the AI's markdown output (handling bold asterisks and line breaks) to ensure clean visual delivery.
+5. **Delivery:** A beautifully designed **HTML/CSS email template** is populated with the AI's insights and sent to the user via the **Gmail Node**.
 
-**Use Lovable**
+## 🧩 Key Features
+* **Dynamic HTML Reporting:** No plain text emails. Users receive a structured "Clinical Form" style report.
+* **Real-time Processing:** Sub-2-second response time thanks to Groq's LPU inference engine.
+* **Smart Parsing:** Custom logic to handle Markdown-to-HTML conversion for seamless data display.
+* **Environment Safety:** Fully configured with Vercel environment variables (`VITE_` prefix) for secure API communication.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## 🛠️ Technical Challenges Overcome
+* **Environment Variable Injection:** Solved the "undefined" URL issue in Vite by properly prefixing variables and managing Vercel build caches.
+* **Regex Data Extraction:** Developed robust regex patterns to extract specific data points from LLM-generated strings, even when wrapped in Markdown formatting (e.g., `**Wellness Score:**`).
 
-Changes made via Lovable will be committed automatically to this repo.
+## 👨‍💻 Author
+**Shahryar Sohail** *BS Software Engineering Student @ UMT Lahore* [LinkedIn](https://www.linkedin.com/in/shahryar-sohail/)
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+---
+*Developed as part of an exploration into AI Automation and Full-stack Integration.*
